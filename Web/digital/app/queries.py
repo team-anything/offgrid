@@ -1,14 +1,5 @@
 import pyrebase
-
-config={
-        "apiKey": "AIzaSyAbR4GEnADyWeqqIr9BHQ6NbgWoGQ2U8lA",
-        "authDomain": "digizen-8527d.firebaseapp.com",
-        "databaseURL": "https://digizen-8527d.firebaseio.com",
-        "storageBucket": "digizen-8527d.appspot.com"
-}
-
-email="teamanything98@gmail.com"
-password="testing1234"
+from App.config import config,email,password
 
 firebase = pyrebase.initialize_app(config)
 auth=firebase.auth()
@@ -26,11 +17,10 @@ def find_donors():
 
 def add_donors(id,rd,fswmch,latlong,number,address):
     refresh(user)
-    main=db.get(user['idToken']).val()
-    donor={}
+    announce=db.child("announce").get(user['idToken']).val() #retrieve a last of values
+    donor=db.child("donor").get(user['idToken']).val()
     donor[id]=[rd,fswmch,latlong,number,address]
-    main["donor"]=donor
-    db.set(main,user['idToken'])
+    db.child("donor").set(donor,user['idToken'])
 
 
     

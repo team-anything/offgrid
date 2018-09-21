@@ -1,14 +1,5 @@
 import pyrebase
-
-config={
-        "apiKey": "AIzaSyAbR4GEnADyWeqqIr9BHQ6NbgWoGQ2U8lA",
-        "authDomain": "digizen-8527d.firebaseapp.com",
-        "databaseURL": "https://digizen-8527d.firebaseio.com",
-        "storageBucket": "digizen-8527d.appspot.com"
-}
-
-email="teamanything98@gmail.com"
-password="testing1234"
+from config import email,password,config
 
 firebase = pyrebase.initialize_app(config)
 auth=firebase.auth()
@@ -23,12 +14,10 @@ lis=[]
 #a={"testing":[1,2,3,4,5,6]}
 #lis.append(a)
 announce=db.child("announce").get(user['idToken']).val() #retrieve a last of values
-main=db.get(user['idToken']).val()
-print(main)
-donor={}
+donor=db.child("donor").get(user['idToken']).val()
+print(donor)
 donor["id"]=["r/d","f/s/w/m/c/h",["lat","long"],"number","address"]
-main["donor"]=donor
-db.set(main,user['idToken'])
+db.child("donor").set(donor,user['idToken'])
 #announce["shivam"]=["shivam","pawase",10]
 #db.child("announce").set(announce,user['idToken'])
 #db.child("user").child("testing").set(sender_id,user['idToken']) #add dictionary value {testing:sender_id}
