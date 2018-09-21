@@ -1,0 +1,130 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital</title>
+    <script src="./dist/bundle.js"></script>
+</head>
+<body>
+    <input type="checkbox" id="nav">
+    <div class="content">
+        <div class="nav">
+            <div class="nav__list">
+                <a href="./index.html"><div class="nav__list--item">Current</div></a>
+                <a href="./provisions.html"><div class="nav__list--item">Provisions</div></a>
+                <a href="#"><div class="nav__list--item">Routes</div></a>
+                <a href="#"><div class="nav__list--item">Report</div></a>
+                <a href="#"><div class="nav__list--item">Donate</div></a>
+            </div>
+        </div>
+        <div class="page-wrap">
+            <label for="nav">☰</label>
+            <div class="pc-tab">
+                <input checked="checked" id="tab1" type="radio" name="pct" />
+                <input id="tab2" type="radio" name="pct" />
+                <input id="tab3" type="radio" name="pct" />
+                <nav>
+                    <ul>
+                        <li class="tab1">
+                            <label for="tab1">First Tab</label>
+                        </li>
+                        <li class="tab2">
+                            <label for="tab2">Second Tab</label>
+                        </li>
+                        <li class="tab3">
+                            <label for="tab3">Third Tab</label>
+                        </li>
+                    </ul>
+                </nav>
+                <section>
+                    <div class="tab1">
+                        <h2>First</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus itaque quidem minus nostrum, voluptatem accusamus aspernatur quia harum ratione, officia laudantium inventore autem doloribus atque labore numquam non. Hic, animi.</p>
+                    </div>
+                    <div class="tab2">
+                        <h2>Second</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nesciunt ipsum dolore error repellendus officiis aliquid a, vitae reprehenderit, accusantium vero, ad. Obcaecati numquam sapiente cupiditate. Praesentium eaque, quae error!</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, maiores.</p>
+                    </div>
+                    <div class="tab3">
+                        <div class="tgl-container">
+                            <ul class="tg-list">
+                                <li class="tg-list-item">
+                                    <input class="tgl tgl-ios" id="cb1" type="checkbox"/>
+                                    <label class="tgl-btn" for="cb1"></label>
+                                    <div class="tgl-list-item-name"><i class="fa fa-bed"></i> Shelter</div>
+                                </li>
+                                <li class="tg-list-item">
+                                    <input class="tgl tgl-ios" id="cb2" type="checkbox"/>
+                                    <label class="tgl-btn" for="cb2"></label>
+                                    <div class="tgl-list-item-name"><i class="fa fa-cutlery"></i> Food</div>
+                                </li>
+                                <li class="tg-list-item">
+                                    <input class="tgl tgl-ios" id="cb3" type="checkbox"/>
+                                    <label class="tgl-btn" for="cb3"></label>
+                                    <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+                                </li>
+                            </ul>
+                            <ul class="tg-list">
+                                <li class="tg-list-item">
+                                    <input class="tgl tgl-ios" id="cb4" type="checkbox"/>
+                                    <label class="tgl-btn" for="cb4"></label>
+                                    <div class="tgl-list-item-name"><i class="fa fa-medkit"></i> Medkit</div>
+                                </li>
+                                <li class="tg-list-item">
+                                    <input class="tgl tgl-ios" id="cb5" type="checkbox"/>
+                                    <label class="tgl-btn" for="cb5"></label>
+                                    <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+                                </li>
+                                <li class="tg-list-item">
+                                    <input class="tgl tgl-ios" id="cb6" type="checkbox"/>
+                                    <label class="tgl-btn" for="cb6"></label>
+                                    <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- <div class="tgl-container">
+    <ul class="tg-list">
+        <li class="tg-list-item">
+            <input class="tgl tgl-ios" id="cb1" type="checkbox"/>
+            <label class="tgl-btn" for="cb1"></label>
+            <div class="tgl-list-item-name"><i class="fa fa-bed"></i> Shelter</div>
+        </li>
+        <li class="tg-list-item">
+            <input class="tgl tgl-ios" id="cb2" type="checkbox"/>
+            <label class="tgl-btn" for="cb2"></label>
+            <div class="tgl-list-item-name"><i class="fa fa-cutlery"></i> Food</div>
+        </li>
+        <li class="tg-list-item">
+            <input class="tgl tgl-ios" id="cb3" type="checkbox"/>
+            <label class="tgl-btn" for="cb3"></label>
+            <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+        </li>
+    </ul>
+    <ul class="tg-list">
+        <li class="tg-list-item">
+            <input class="tgl tgl-ios" id="cb4" type="checkbox"/>
+            <label class="tgl-btn" for="cb4"></label>
+            <div class="tgl-list-item-name"><i class="fa fa-medkit"></i> Medkit</div>
+        </li>
+        <li class="tg-list-item">
+            <input class="tgl tgl-ios" id="cb5" type="checkbox"/>
+            <label class="tgl-btn" for="cb5"></label>
+            <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+        </li>
+        <li class="tg-list-item">
+            <input class="tgl tgl-ios" id="cb6" type="checkbox"/>
+            <label class="tgl-btn" for="cb6"></label>
+            <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+        </li>
+    </ul>
+</div> -->
