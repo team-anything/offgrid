@@ -1,0 +1,41 @@
+#nav:checked{
+    & +.content>.nav {
+        transform: translateX(85px);
+    }
+
+    & +.content>.page-wrap{
+        transform: translateX(85px);
+    }
+}
+
+label[for='nav']{
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+#nav{
+    display: none;
+}
+
+.nav{
+    position: absolute;
+    left: -85px;
+    top: 0;
+    bottom: 0;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    transition: all .5s linear;
+
+    &__list{
+
+        a {
+            color: var(--colo-white);
+        };
+
+        &--item{
+            font-size: 1.8rem;
+            padding: 5px;
+            cursor: pointer;
+        }
+    }
+}
