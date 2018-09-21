@@ -1,5 +1,6 @@
 // GET CURRENT LOCATION
 
+var card = "<html><head></head><body><div class='card' style=' width: 200px; font-size: 12px; background-color: #fff; color: #222; padding: 10px; border: 0; '><div style='margin: 2px;' class='cardname'> <strong>Name:</strong> John Doe</div><div style='margin: 2px;' class='cardneed'> <strong>Need</strong> Food</div><div style='margin: 2px;' class='cardtimestamp'> <strong>Timestamp</strong> 22:25:56</div><div style='margin: 2px;' class='carddescription'> <strong>Description</strong> Need urgent help, for family of 4</div><div style='margin: 2px;' class='cardaddress'> <strong>Address</strong> 123, CA Lane</div><div style='margin: 2px;' class='cardnumber'> <strong>Phone No.</strong> 1234567890</div><div style='text-align: center;'><a href='tel:1234567890'><div style=' padding: 5px; background-color: orangered; display: inline-block; margin: 2px; color: #222; font-size: 15px; box-shadow: 0px 2px 5px 0 rgba(0,0,0,.5); border-radius: 3px; '>I can help!</div></a></div></div></body></html>"
 var latx;
 var lngx;
 window.onload = function geoloc (){
@@ -57,11 +58,11 @@ init = function initMap(){
     {
       coords:{lat:42.4668,lng:-70.9495},
       iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-      content:'<h1>Lynn MA</h1>'
+      content: card
     },
     {
       coords:{lat:19.084249,lng:72.885178},
-      content:'<h1>Amesbury MA</h1>'
+      content: card
     },
     {
       coords:{lat:42.7762,lng:-71.0773}
