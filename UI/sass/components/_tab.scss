@@ -1,0 +1,27 @@
+.tab{
+
+    font-size: 1.5rem;
+    width: 80vw;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%,-50%);
+
+    &__data{
+        display:none;
+    }
+}
+
+
+
+@for $i from 1 through 3{
+    #tab#{$i}{
+        display: none;
+    }
+    #tab#{$i}:checked ~ .tab__data#{$i}{
+        display: flex;
+    }
+    label[for='tab#{$i}']{
+        cursor: pointer;
+    }
+}
