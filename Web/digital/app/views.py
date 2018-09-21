@@ -10,3 +10,6 @@ def index(request):
 
 def appindex(request):
     return render(request,'app/appindex.html')
+
+def map(request):
+    return render(request,'app/map.html')
