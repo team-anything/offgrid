@@ -1,0 +1,52 @@
+  .fildscontainer{
+    max-width: 300px;
+    width: 80%;
+    margin: auto;
+}
+  .filds{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px
+  }
+  .filds input{
+    width: 100%;
+    height: 46px;
+    border: 0px;
+    border-bottom: 1px solid #9e9e9e;
+    transition: border-bottom, box-shadow .25s ease-in-out;
+  }
+  .filds label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: text;
+    color: #9e9e9e;
+    transform: translateY(18px);
+    transition: transform .25s ease-in-out;
+    transform-origin: 0% 100%;
+  }
+  .filds input:focus{
+    border-bottom: 1px solid #26a96a;
+    box-shadow: 0 1px 0 0 #26a96a;
+    outline: 1px solid transparent;
+  }
+  .filds input:focus + label{
+    transform: translateY(-14px) scale(.8);
+    color: #26a96a;
+  }
+  
+  .filds input::-webkit-input-placeholder,
+  .filds input::-moz-input-placeholder{
+      color: transparent;
+  }
+  .filds input::placeholder{
+      color: transparent;
+  }
+  .filds input:not(:placeholder-shown){
+    border-bottom: 1px solid #9e9e9e;
+  }
+  .filds input:not(:placeholder-shown) + label{
+    transform: translateY(-14px) scale(.8);
+  }

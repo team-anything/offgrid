@@ -15,12 +15,29 @@ def find_donors():
     donors=db.child("donor").get(user['idToken']).val() #retrieve a last of values
     return donors
 
-def add_donors(id,rd,fswmch,latlong,number,address):
+def find_specific_donors(queue):
     refresh(user)
-    announce=db.child("announce").get(user['idToken']).val() #retrieve a last of values
+    donors=db.child("donor").get(user["idToken"]).val()
+    results=[]
+    queue=int("".join(queue),2)
+    for key in donors.keys():
+        if int(donors[key][1],2) & queue:
+            results.append(donors[key])
+    return 
+
+
+def add_donors(id,rd,fswmch,name,descr,address,number):
+    refresh(user)
     donor=db.child("donor").get(user['idToken']).val()
-    donor[id]=[rd,fswmch,latlong,number,address]
-    db.child("donor").set(donor,user['idToken'])
+    id = str(id)
+    print([rd,fswmch,name,descr,number,address])
+    # donor[id]=[rd,fswmch,cords,name,descr,number,address]
+    # db.child("donor").set(donor,user['idToken'])
+
+def number_of_req():
+    refresh(user)
+    donor=db.child("donor").get(user["idToken"]).val()
+    return len(donor)
 
 
     

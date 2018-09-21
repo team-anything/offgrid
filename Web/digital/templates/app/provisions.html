@@ -2,4 +2,44 @@
 
 {% block body_block %}
 
+
+<div class="result">
+    {% for i in src %}
+    <div class="resultcard">
+        <img class="resultcard__img" src="https://dummyimage.com/590x425/000/fff" alt="#">
+        <h2 class="resultcard__heading">{{i.2}}</h2>
+        <h4 class="resultcard__source">{{i.0}}</h4>
+    </div>
+    <div class="summarycard">
+        <div class="summarycard__left">
+            <img src="https://dummyimage.com/590x425/000/fff" alt="#">
+            <!--                 <div class="feature">
+                <ul class="feature__list">
+                    <li class="feature__item"><a href=""><i class="fa fa-thumbs-up"></i></a></li>
+                    <li class="feature__item"><a href=""><i class="fa fa-thumbs-down"></i></a></li>
+                </ul>
+            </div> -->
+        </div>
+        <div class="summarycard__right">
+            <div class="feature">
+                <ul class="feature__list feature__list--right">
+                    <li class="feature__item"><a href=""><i class="fa fa-bookmark-o bookmark"></i></a></li>
+                    <li class="feature__item"><a href=""><i class="fa fa-check-circle"></i></a></li>
+                </ul>
+            </div>
+            <h2 class="summarycard__heading">{{i.2}}</h2>
+            <p class="summarycard__summary">{{i.4}}</p>
+            <h4 class="summarycard__source">{{i.0}}</h4>
+            <div class="feature">
+                <ul class="feature__list feature__list--right">
+                    <li class="feature__item"><a target="_target" href="{{i.1}}" title="Read More" class="fa fa-newspaper-o"></i></a></li>
+                    <li class="feature__item"><a href="" title="Facebook Share"><i class="fa fa-facebook"></i></a></li>
+                    <li class="feature__item"><a href="" title="Twitter Share"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}

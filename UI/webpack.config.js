@@ -1,9 +1,10 @@
 var path = require("path");
 
 module.exports = {
+  watch: true,
   entry: "./main.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../Web/digital/static/js"),
     filename: "bundle.js",
     publicPath: "/dist"
   },

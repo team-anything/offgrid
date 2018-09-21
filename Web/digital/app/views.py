@@ -14,19 +14,30 @@ def appindex(request):
     return render(request,'app/appindex.html')
 
 def map(request):
+    # FSWMCH
     if(request.method == 'POST'):
-        food = request.POST.get('prov1')
-        shelter = request.POST.get('prov2')
-        lat = request.POST.get('prov3')
-        lng = request.POST.get('prov1')
-        number = request.POST.get('prov1')
-        address = request.POST.get('prov1')
+        # food = request.POST.get('cbx1')
+        # shelter = request.POST.get('cbx2')
+        # water = request.POST.get('cbx3')
+        # medicine = request.POST.get('cbx4')
+        # cloth = request.POST.get('cbx5')
+        # hygenie = request.POST.get('cbx6')
+        fin = []
+        for i in range(1,7):
+            temp = request.POST.get('cbx'+str(i))
+            if temp == 'on':
+                fin.append('1')
+            else:
+                fin.append('0')
+        print(fin)
         count=1
-        queries.add_donors(str(count),food,shelter,[lat,lng],number,address)
-        return render(request,'app/map.html')
+        result = queries.find_specific_donors(fin)
+        # result = [1,2,3,4]
+        print(result)
+        return render(request,'app/map.html',{"result": result, "fin":fin})
     else:
         donors = queries.find_donors()
-        #print(donors['id'])
+        # print(donors['id'])
         list = []
         for i in donors:
             list.append(donors[i])
@@ -36,8 +47,31 @@ def calamity(request):
     return render(request,'app/calamity.html')
 
 def provisions(request):
-    return render(request,'app/provisions.html')
+    temp = ["AAAAA","CCCCCCC","DDDDDDDDDD","XXXXXXXXXXX"]
+    return render(request,'app/provisions.html',{'src': temp})
 
+def need(request):
+    if(request.method == 'POST'):
+        fin = []
+        for i in range(1,7):
+            temp = request.POST.get('cb'+str(i))
+            if temp == 'on':
+                fin.append('1')
+            else:
+                fin.append('0')
+        print(fin)
+        index = queries.number_of_req()
+        final = [index,0]
+        final.append("".join(fin))
+        final.append(request.POST.get("name"))
+        final.append(request.POST.get("descr"))
+        final.append(request.POST.get("addr"))
+        final.append(request.POST.get("phn"))
+        
+        queries.add_donors(final[0],0,final[1],final[2],final[3],final[4],final[5])
+        print(final)
+        # result = [1,2,3,4]
+        return render(request,'app/map.html')
 
 # def adddonors(request):
 #     if(request.method == 'POST'):

@@ -37,6 +37,7 @@ h1 {
   width: 80%;
   max-width: 70rem;
   margin: 0 auto;
+  font-size: 1.8rem;
   ul {
     list-style: none;
     margin: 0;
@@ -50,6 +51,7 @@ h1 {
         border-bottom: 0;
         background: $unactiveColor;
         color: #444;
+        cursor: pointer;
         &:hover {
           background: $unactiveHoverColor;
         }

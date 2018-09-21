@@ -1,6 +1,24 @@
 {% extends 'app/base.html' %}
 
 {% block body_block %}
+<script>
+    var xmarkers = []
+    {% for item in result %}
+    var temp = []    
+    var cords = {{item.2}}
+    var name = '{{item.3}}'
+    var descr = '{{item.4}}'
+    var num = '{{item.5}}'
+    var addr = '{{item.6}}'
+    temp.push(cords)
+    temp.push(name)
+    temp.push(descr)
+    temp.push(num)
+    temp.push(addr)
+    xmarkers.push(temp)
+    // console.log(cords)
+    {% endfor %}
+</script>
 <div class="pc-tab">
     <input id="tab1" type="radio" name="pct" />
     <input id="tab2" type="radio" name="pct" />
@@ -8,13 +26,13 @@
     <nav>
         <ul>
             <li class="tab1">
-                <label for="tab1">First Tab</label>
+                <label for="tab1" style="display: none;">First Tab</label>
             </li>
             <li class="tab2">
-                <label for="tab2">Second Tab</label>
+                <label for="tab2">Need</label>
             </li>
             <li class="tab3">
-                <label for="tab3">Third Tab</label>
+                <label for="tab3">Donate</label>
             </li>
         </ul>
     </nav>
@@ -24,57 +42,126 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus itaque quidem minus nostrum, voluptatem accusamus aspernatur quia harum ratione, officia laudantium inventore autem doloribus atque labore numquam non. Hic, animi.</p>
         </div>
         <div class="tab2 tab">
-            <h2>Second</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nesciunt ipsum dolore error repellendus officiis aliquid a, vitae reprehenderit, accusantium vero, ad. Obcaecati numquam sapiente cupiditate. Praesentium eaque, quae error!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, maiores.</p>
+            <form action="{% url 'app:need' %}" method="post">
+                {% csrf_token %}
+                <div class="fildscontainer">
+                    <div class="filds">
+                        <input type="text" id="name" placeholder="Name" name="name">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="filds">
+                        <input type="text" id="description" placeholder="short description" name="descr">
+                        <label for="description">Description</label>
+                    </div>
+                    <div class="filds">
+                        <input type="text" id="address" placeholder="Address" name="addr">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="filds">
+                        <input type="text" id="phone" placeholder="Phone" name="phn">
+                        <label for="phone">Phone</label>
+                    </div>
+                </div>
+                <div class="tgl-container">
+                    <ul class="tg-list">
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cb1" type="checkbox" name="cb1"/>
+                            <label class="tgl-btn" for="cb1"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-bed"></i> Shelter</div>
+                        </li>
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cb2" type="checkbox" name="cb2"/>
+                            <label class="tgl-btn" for="cb2"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-cutlery"></i> Food</div>
+                        </li>
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cb3" type="checkbox" name="cb3"/>
+                            <label class="tgl-btn" for="cb3"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+                        </li>
+                    </ul>
+                    <ul class="tg-list">
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cb4" type="checkbox" name="cb4"/>
+                            <label class="tgl-btn" for="cb4"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-medkit"></i> Medkit</div>
+                        </li>
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cb5" type="checkbox" name="cb5"/>
+                            <label class="tgl-btn" for="cb5"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+                        </li>
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cb6" type="checkbox" name="cb6"/>
+                            <label class="tgl-btn" for="cb6"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+                        </li>
+                    </ul>
+                </div>
+                <button type="submit" id="needForm">Need</button>
+            </form>
         </div>
         <div class="tab3 tab">
-          <div id="map"></div>
-          <!-- <button onclick="geoloc()">Submit</button> -->
-          <form action="{% url 'app:map' %}" method="post">
-            {% csrf_token %}
-            <div class="tgl-container">
-                <ul class="tg-list">
-                    <li class="tg-list-item">
-                        <input class="tgl tgl-ios" id="cb1" type="checkbox"/>
-                        <label class="tgl-btn" for="cb1"></label>
-                        <div class="tgl-list-item-name"><i class="fa fa-bed"></i> Shelter</div>
-                    </li>
-                    <li class="tg-list-item">
-                        <input class="tgl tgl-ios" id="cb2" type="checkbox"/>
-                        <label class="tgl-btn" for="cb2"></label>
-                        <div class="tgl-list-item-name"><i class="fa fa-cutlery"></i> Food</div>
-                    </li>
-                    <li class="tg-list-item">
-                        <input class="tgl tgl-ios" id="cb3" type="checkbox"/>
-                        <label class="tgl-btn" for="cb3"></label>
-                        <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
-                    </li>
-                </ul>
-                <ul class="tg-list">
-                    <li class="tg-list-item">
-                        <input class="tgl tgl-ios" id="cb4" type="checkbox"/>
-                        <label class="tgl-btn" for="cb4"></label>
-                        <div class="tgl-list-item-name"><i class="fa fa-medkit"></i> Medkit</div>
-                    </li>
-                    <li class="tg-list-item">
-                        <input class="tgl tgl-ios" id="cb5" type="checkbox"/>
-                        <label class="tgl-btn" for="cb5"></label>
-                        <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
-                    </li>
-                    <li class="tg-list-item">
-                        <input class="tgl tgl-ios" id="cb6" type="checkbox"/>
-                        <label class="tgl-btn" for="cb6"></label>
-                        <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
-                    </li>
-                </ul>
-            </div>
-            <button type="submit" id="provForm">Provide</button>
-          </form>
+            <div id="map"></div>
+            <!-- <button onclick="geoloc()">Submit</button> -->
+            <form action="{% url 'app:map' %}" method="post">
+                {% csrf_token %}
+                <div class="tgl-container">
+                    <ul class="tg-list">
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cbx1" type="checkbox" name="cbx1"/>
+                            <label class="tgl-btn" for="cbx1"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-bed"></i> Shelter</div>
+                        </li>
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cbx2" type="checkbox" name="cbx2"/>
+                            <label class="tgl-btn" for="cbx2"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-cutlery"></i> Food</div>
+                        </li>
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cbx3" type="checkbox" name="cbx3"/>
+                            <label class="tgl-btn" for="cbx3"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+                        </li>
+                    </ul>
+                    <ul class="tg-list">
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cbx4" type="checkbox" name="cbx4"/>
+                            <label class="tgl-btn" for="cbx4"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-medkit"></i> Medkit</div>
+                        </li>
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cbx5" type="checkbox" name="cbx5"/>
+                            <label class="tgl-btn" for="cbx5"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+                        </li>
+                        <li class="tg-list-item">
+                            <input class="tgl tgl-ios" id="cbx6" type="checkbox" name="cbx6"/>
+                            <label class="tgl-btn" for="cbx6"></label>
+                            <div class="tgl-list-item-name"><i class="fa fa-tint"></i> Water</div>
+                        </li>
+                    </ul>
+                </div>
+                <button type="submit" id="provForm">Provide</button>
+            </form>
         </div>
     </section>
 </div>
-
+<script>
+    var button = []
+    {% for i in fin %}
+    button.push('{{i}}')
+    {% endfor %}
+    console.log("TTTTTTTTTTTTT")
+    console.log(button)
+    for(var i=0;i<6;i++){
+        if(button[i]=="1"){
+            var radio = document.getElementById("cbx"+String(i+1))
+            console.log(radio)
+            radio.checked = true;
+        }
+    }
+</script>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwAdfRMQoKv8Tmc4iD2KsDCXQfWoxVJkk&callback=initMap">
 </script>

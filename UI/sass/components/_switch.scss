@@ -5,7 +5,7 @@
 }
 
 .tg-list-item {
-	margin: 0 2em;
+	margin: .5rem 0em;
 	display: flex;
 	align-items: center;
 	font-size: 1.5rem;
@@ -120,10 +120,12 @@
 
 .tgl-container{
 	display: flex;
+	justify-content: space-around;
+	margin: 10px;
 }
 
 @media screen and (max-device-width: 650px) {
 	.tgl-container{
-		flex-direction: column;
+		flex-direction: row;
 	}
 }
