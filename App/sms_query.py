@@ -4,6 +4,9 @@ import codecs
 import json,re
 from config import *
 
+def apiai_query():
+    print("YAY")
+
 def getMessages(inboxID):
     data =  urllib.parse.urlencode({'apikey': TLapikey, 'inbox_id' : inboxID})
     data = data.encode('utf-8')
@@ -26,7 +29,8 @@ def response():
     ans = json.loads(resp.decode('ASCII'))
     message = ans["messages"][-1]["message"][6:]
     sender = ans["messages"][-1]["number"]
-    return message,sender
+    return ans
+    #return message,sender
 
 if __name__ == "__main__":
     # sendSMS("7045185177","HEY")
