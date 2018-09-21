@@ -1,20 +1,28 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{% static 'css/map.css' %}">
-  <title>My Google Map</title>
-</head>
-<body>
+{% extends 'app/base.html' %}
+
+{% block body_block %}
   <h1>My Google Map</h1>
   <div id="map"></div>
   <button onclick="geoloc()">Submit</button>
-  <script src="{% static 'js/map.js' %}"></script>
+  <br>
+  <br>
+  <form action="" method="post">
+    {% csrf_token %}
+    <input type="radio" name="prov1" id="prov1">
+    <label for="name"></label>
+    <input type="radio" name="prov2" id="prov2">
+    <label for="name"></label>
+    <input type="radio" name="prov3" id="prov3">
+    <label for="name"></label>
+    <input type="radio" name="prov4" id="prov4">
+    <label for="name"></label>
+    <input type="radio" name="prov5" id="prov5">
+    <label for="name"></label>
+    <input type="radio" name="prov6" id="prov6">
+    <label for="name"></label>
+    <button type="submit" id="provForm">Provide</button>
+  </form>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwAdfRMQoKv8Tmc4iD2KsDCXQfWoxVJkk&callback=initMap">
   </script>
-</body>
-</html>
+{% endblock %}

@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Digital</title>
         <script src="{% static 'js/bundle.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/map.css' %}">
+        <script src="{% static 'js/map.js' %}"></script>
     </head>
     <body>
         <input type="checkbox" id="nav">
@@ -14,7 +16,7 @@
                 <div class="nav__list">
                     <a href="{% url 'app:calamity' %}"><div class="nav__list--item">Current</div></a>
                     <a href="{% url 'app:provisions' %}"><div class="nav__list--item">Provisions</div></a>
-                    <a href="#"><div class="nav__list--item">Routes</div></a>
+                    <a href="{% url 'app:map' %}"><div class="nav__list--item">Map</div></a>
                     <a href="#"><div class="nav__list--item">Report</div></a>
                     <a href="#"><div class="nav__list--item">Donate</div></a>
                 </div>
@@ -25,5 +27,6 @@
             {% endblock %}
             </div>
         </div>
+    <script src="{% static 'js/forms.js' %}"></script>
     </body>
 </html>
