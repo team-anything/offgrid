@@ -1,10 +1,20 @@
+
+# nodemodules
+node_modules/
+
+# Keys
+App/config.py
+
 # Byte-compiled / optimized / DLL files
+.vscode/
 __pycache__/
 *.py[cod]
 *$py.class
 
 # C extensions
 *.so
+*.swp
+*.swo
 
 # Distribution / packaging
 .Python

@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #fc427b;
+    --color-primary-dark: #b33771;
+    --color-secondary: #0062c5;
+    --color-secondary-light: #1b9cfc;
+    --color-tertiary: #ffa700;
+    --color-tertiary-dark: #b37500;
+    --color-white: #fff;
+    --color-black: #222;
+    --color-gray: #ccc;
+    background-color: var(--color-black);
+    color: var(--color-black);
+    font-size: 62.5%;
+}
+
+@media screen and (max-device-width: 650px) {
+    :root {
+        font-size: 60%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: var(--color-white);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
