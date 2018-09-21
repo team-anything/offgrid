@@ -1,16 +1,19 @@
 #nav:checked{
     & +.content>.nav {
-        transform: translateX(85px);
+        transform: translateX(105px);
     }
 
     & +.content>.page-wrap{
-        transform: translateX(85px);
+        transform: translateX(105px);
     }
 }
 
 label[for='nav']{
     cursor: pointer;
     font-size: 2.5rem;
+    position: relative;
+    top: 15px;
+    left: 15px;
 }
 
 #nav{
@@ -19,7 +22,7 @@ label[for='nav']{
 
 .nav{
     position: absolute;
-    left: -85px;
+    left: -105px;
     top: 0;
     bottom: 0;
     background-color: var(--color-black);
@@ -34,8 +37,13 @@ label[for='nav']{
 
         &--item{
             font-size: 1.8rem;
-            padding: 5px;
+            padding: 14px;
             cursor: pointer;
+            transition: all .3s linear;
+
+            &:hover{
+                background: var(--color-primary);
+            }
         }
     }
 }

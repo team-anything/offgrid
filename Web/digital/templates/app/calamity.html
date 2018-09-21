@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+
+{% block body_block %}
+<div class="pc-tab">
+        <input id="tab1" type="radio" name="pct" />
+        <input id="tab2" type="radio" name="pct" />
+        <input id="tab3" type="radio" name="pct" checked/>
+        <nav>
+            <ul>
+                <li class="tab1">
+                    <label for="tab1">High</label>
+                </li>
+                <li class="tab2">
+                    <label for="tab2">Medium</label>
+                </li>
+                <li class="tab3">
+                    <label for="tab3">Low</label>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <div class="tab1 tab">
+                High
+            </div>
+            <div class="tab2 tab">
+                Medium
+            </div>
+            <div class="tab3 tab">
+                Low
+            </div>
+        </section>
+    </div>
+{% endblock %}

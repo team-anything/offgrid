@@ -16,14 +16,14 @@
     --color-white: #fff;
     --color-black: #222;
     --color-gray: #ccc;
-    background-color: var(--color-black);
+    background-color: var(--color-white);
     color: var(--color-black);
     font-size: 62.5%;
 }
 
 @media screen and (max-device-width: 650px) {
     :root {
-        font-size: 60%;
+        font-size: 50%;
     }
 }
 
@@ -37,3 +37,11 @@ a {
     text-decoration: none;
     color: var(--color-black);
 }
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
