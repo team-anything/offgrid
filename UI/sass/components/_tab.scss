@@ -26,28 +26,16 @@ $unactiveHoverColor: #dddddd;
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,400,700);
 
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  -webkit-font-smoothing: antialiased;
-  background: #ecf0f1;
-  font-family: 'Raleway';
-}
-
 h1 {
   text-align: center;
   font-weight: 100;
-  font-size: 60px;
+  font-size: 6rem;
   color: #e74c3c;
 }
 
 .pc-tab { 
-  width: 100%;
-  max-width: 700px;
+  width: 80%;
+  max-width: 70rem;
   margin: 0 auto;
   ul {
     list-style: none;
@@ -57,7 +45,7 @@ h1 {
       label {
         font-family: "Raleway";
         float: left;
-        padding: 15px 25px;
+        padding: 1.5rem 2.5rem;
         border: 1px solid #ddd;
         border-bottom: 0;
         background: $unactiveColor;
@@ -77,12 +65,12 @@ h1 {
   section {
     font-family: "Droid Serif";
     clear: both;
-    div {
-      padding: 20px; 
+    .tab{
+      padding: 2rem; 
       width: 100%;
       border: 1px solid #ddd;
       background: #fff;
-      line-height: 1.5em;
+      line-height: 1.5rem;
       letter-spacing: 0.3px;
       color: #444;
       h2 {
@@ -112,16 +100,5 @@ h1 {
       left: 0;
       bottom: -1px;
     }
-  }
-}
-
-footer {
-  margin-top: 50px;
-  font-size: 14px;
-  color: #CCC;
-  text-align: center;
-  a {
-    color: #AAA;
-    text-decoration: none;
   }
 }

@@ -121,3 +121,9 @@
 .tgl-container{
 	display: flex;
 }
+
+@media screen and (max-device-width: 650px) {
+	.tgl-container{
+		flex-direction: column;
+	}
+}
