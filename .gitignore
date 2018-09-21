@@ -1,3 +1,7 @@
+
+# nodemodules
+node_modules/
+
 # Keys
 App/config.py
 
