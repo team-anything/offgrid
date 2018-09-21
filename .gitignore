@@ -2,19 +2,17 @@
 # nodemodules
 node_modules/
 
-# Keys
-App/config.py
 
 # Byte-compiled / optimized / DLL files
 .vscode/
-__pycache__/
+**/__pycache__
+**./db.sqlite3
+node_modules/
 *.py[cod]
 *$py.class
 
 # C extensions
 *.so
-*.swp
-*.swo
 
 # Distribution / packaging
 .Python
@@ -63,8 +61,9 @@ coverage.xml
 
 # Django stuff:
 *.log
+.static_storage/
+.media/
 local_settings.py
-db.sqlite3
 
 # Flask stuff:
 instance/
@@ -112,3 +111,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+**.db.sqlite3

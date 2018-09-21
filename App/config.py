@@ -1,0 +1,4 @@
+
+TLapikey = "ygNzUrMWpEo-4ApNKdUBH104uM4tT5BzbkrLvImsjW"
+GLapikey = "5193fd5d6be7dec3bc6562373b65b84ca193b8434513443668164619"
+GCPapikey = "AIzaSyAwAdfRMQoKv8Tmc4iD2KsDCXQfWoxVJkk" 
