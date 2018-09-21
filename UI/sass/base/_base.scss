@@ -23,7 +23,7 @@
 
 @media screen and (max-device-width: 650px) {
     :root {
-        font-size: 60%;
+        font-size: 50%;
     }
 }
 
@@ -37,3 +37,11 @@ a {
     text-decoration: none;
     color: var(--color-black);
 }
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+

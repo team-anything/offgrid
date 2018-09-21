@@ -1,5 +1,5 @@
 import pyrebase
-from config import config,email,password
+from .config import config,email,password
 
 firebase = pyrebase.initialize_app(config)
 auth=firebase.auth()
