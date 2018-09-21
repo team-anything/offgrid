@@ -13,3 +13,9 @@ def appindex(request):
 
 def map(request):
     return render(request,'app/map.html')
+
+def calamity(request):
+    return render(request,'app/calamity.html')
+
+def provisions(request):
+    return render(request,'app/provisions.html')

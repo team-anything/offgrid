@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Digital</title>
+        <script src="{% static 'js/bundle.js' %}"></script>
+    </head>
+    <body>
+        <input type="checkbox" id="nav">
+        <div class="content">
+            <div class="nav">
+                <div class="nav__list">
+                    <a href="{% url 'app:calamity' %}"><div class="nav__list--item">Current</div></a>
+                    <a href="{% url 'app:provisions' %}"><div class="nav__list--item">Provisions</div></a>
+                    <a href="#"><div class="nav__list--item">Routes</div></a>
+                    <a href="#"><div class="nav__list--item">Report</div></a>
+                    <a href="#"><div class="nav__list--item">Donate</div></a>
+                </div>
+            </div>
+            <div class="page-wrap">
+                <label for="nav">☰</label>
+            {% block body_block %}
+            {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
