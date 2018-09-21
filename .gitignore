@@ -4,9 +4,8 @@ node_modules/
 
 # Byte-compiled / optimized / DLL files
 .vscode/
-**./__pycache__
-__pycache__
-**./db.sqlite3
+**./__pycache__/**
+**./db.sqlite3/**
 node_modules/
 *.py[cod]
 *$py.class

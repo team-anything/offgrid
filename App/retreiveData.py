@@ -8,6 +8,7 @@ from datetime import datetime
 YOUR_API_KEY = GCPapikey # Enter your API Key
 
 google_places = GooglePlaces(YOUR_API_KEY)
+gmaps = googlemaps.Client(key=GCPapikey) # Enter your Key here.
 
 type_map = {
     "HOSPITAL":types.TYPE_HOSPITAL,
@@ -16,7 +17,9 @@ type_map = {
     "TRAIN":types.TYPE_TRAIN_STATION,
     "TAXI":types.TYPE_TAXI_STAND,
     "GAS":types.TYPE_GAS_STATION,
-    "ATM":types.TYPE_ATM
+    "ATM":types.TYPE_ATM,
+    "BUS":types.TYPE_BUS_STATION,
+    "FIRE":types.TYPE_FIRE_STATION,
     }
 
 '''
@@ -26,6 +29,7 @@ query_result = google_places.text_search(query="Restaurant in Dahisar",location=
 def process_detail(key):
     # AUTOCOMPLETE
     query_result = google_places.autocomplete(input=key,location="India",radius=200)
+    print(query_result)
     if len(query_result.predictions):
         pred = query_result.predictions[0]
         addr = pred.description
@@ -37,11 +41,14 @@ def process_detail(key):
 
 def google_directions(ori, dest, mode):
     message = []
-    gmaps = googlemaps.Client(key=GCPapikey) # Enter your Key here.
+    
     now = datetime.now()
     directions_result = None
     try: 
-        directions_result = gmaps.directions(origin=ori, destination=dest,mode=mode, departure_time = now)
+        print(ori,dest,mode)
+        directions_result = gmaps.directions("Sydney Town Hall",
+                                     "Parramatta, NSW",
+                                     mode="driving", departure_time = now)
     except:
         print("A network error occurred; please try again")
     
@@ -63,6 +70,8 @@ def google_directions(ori, dest, mode):
 
 def retreive_area(loc,key):
     print("Retreiving data")
+    key = key.upper()
+    print(loc,key)
     query_result = google_places.nearby_search(location=loc, keyword=key, radius=2000, types=[type_map[key]])
     places_data = []        # name,number,addr
     for place in query_result.places:
@@ -72,6 +81,14 @@ def retreive_area(loc,key):
     if len(places_data):
         return places_data[0]
 
+def latlong(addr):
+    geocode_result = gmaps.geocode(addr)
+    latlng=geocode_result[0]['geometry']['location']
+    return [latlng['lat'],latlng['lng']]
+    
 if __name__ == "__main__":
-    #print(retreive_area(loc="Dahisar ,Mumbai",key="POLICE"))
-    print(google_directions)
+    # print(retreive_area(loc="Dahisar ,Mumbai",key="POLICE"))
+    #print(google_directions('sec10 Airoli', 'Somaiya VidyaVihar', 'driving'))
+    #print(google_directions)
+    #print(process_detail('KJSCE ,VidyaVihar'))
+    print(retreive_area('KJSCE ,VidyaVihar',"fire"))
