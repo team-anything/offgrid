@@ -6,7 +6,7 @@
   <button onclick="geoloc()">Submit</button>
   <br>
   <br>
-  <form action="" method="post">
+  <form action="{% url 'app:map' %}" method="post">
     {% csrf_token %}
     <input type="radio" name="prov1" id="prov1">
     <label for="name"></label>
@@ -22,6 +22,17 @@
     <label for="name"></label>
     <button type="submit" id="provForm">Provide</button>
   </form>
+  <!-- <script>
+    {% for i in list %}
+    var x = ' {{i.0}} '
+    console.log(x)
+  // <h1>{{ i.1 }}</h1>
+  // <h1>{{ i.2.0 }}</h1>
+  // <h1>{{ i.2.1 }}</h1>
+  // <h1>{{ i.3 }}</h1>
+  // <h1>{{ i.4 }}</h1>
+  </script> -->
+  {% endfor %}
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwAdfRMQoKv8Tmc4iD2KsDCXQfWoxVJkk&callback=initMap">
   </script>
