@@ -24,14 +24,14 @@
             </div>
             <div class="tab2 tab">
                 <div class="cardcontainer">
+                    {% for x in list %}
                     <div class="card">
-                        <div class="card__head">Fire at King's Circle</div>
-                        <div class="card__sub">Lat: 19.058 Long: 70.2598</div>
+                        <div class="card__head">{{ x.0 }}</div><br>
+                        <div class="card__sub"> {{ x.2 }}</div><br>
+                        <div class="card__sub">{{ x.3 }}</div>
+                        <div class="card__sub">{{ x.1 }}</div>
                     </div>
-                    <div class="card">
-                        <div class="card__head">Flood at Koliwada</div>
-                        <div class="card__sub">Lat: 18.579 Long: 75.358</div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="tab3 tab">

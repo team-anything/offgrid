@@ -11,10 +11,10 @@
                 <label for="tab1" style="display: none;">High</label>
             </li>
             <li class="tab2">
-                <label for="tab2">Medium</label>
+                <label for="tab2">New</label>
             </li>
             <li class="tab3">
-                <label for="tab3">Low</label>
+                <label for="tab3">History</label>
             </li>
         </ul>
     </nav>
@@ -27,7 +27,7 @@
                 {% csrf_token %}
                 <div class="fildscontainer">
                     <div class="filds">
-                        <input type="text" id="name" placeholder="Name" name="name">
+                        <input type="text" id="name" placeholder="name" name="name">
                         <label for="name">Name</label>
                     </div>
                     <div class="filds">
@@ -35,39 +35,46 @@
                         <label for="description">Description</label>
                     </div>
                     <div class="filds">
-                        <input type="text" id="address" placeholder="Address" name="addr">
-                        <label for="address">Address</label>
+                        <input type="date" id="date" name="date">
+                        <label for="date">Issue Discovered</label>
                     </div>
                     <div class="filds">
-                        <input type="text" id="phone" placeholder="Phone" name="phn">
-                        <label for="phone">Phone</label>
+                        <input type="text" id="dept" placeholder="muncipal" name="dept">
+                        <label for="dept">Department</label>
                     </div>
                 </div>
-                <button type="submit" id="issueForm">Register</button>
+                <button type="submit" id="issueForm"><strong>Register</strong></button>
             </form>
         </div>
         <div class="tab3 tab">
             <div class="result">
                 {% for i in src %}
                 <div class="resultcard">
-                    <img class="resultcard__img" src="https://dummyimage.com/590x425/000/fff" alt="#">
-                    <h2 class="resultcard__heading">{{i.2}}</h2>
-                    <h4 class="resultcard__source">{{i.0}}</h4>
+                    <img class="resultcard__img" src="https://picsum.photos/200/200/?random" alt="#">
+                    <h2 class="resultcard__heading">{{i.0}}</h2>
+                    <h4 class="resultcard__source">{{i.2}}</h4>
                 </div>
                 <div class="summarycard">
                     <div class="summarycard__left">
-                        <img src="https://dummyimage.com/590x425/000/fff" alt="#">
+                        <img src="https://picsum.photos/200/200/?random" alt="#">
                     </div>
                     <div class="summarycard__right">
                         <div class="feature">
                             <ul class="feature__list feature__list--right">
-                                <li class="feature__item"><a href=""><i class="fa fa-bookmark-o bookmark"></i></a></li>
-                                <li class="feature__item"><a href=""><i class="fa fa-check-circle"></i></a></li>
+                                <li class="feature__item"><a href=""><i class="fa fa-thumbs-up"></i></a></li>
+                                <li class="feature__item"><a href=""><i class="fa fa-thumbs-down"></i></a></li>
                             </ul>
                         </div>
-                        <h2 class="summarycard__heading">{{i.2}}</h2>
-                        <p class="summarycard__summary">{{i.4}}</p>
-                        <h4 class="summarycard__source">{{i.0}}</h4>
+                        <h2 class="summarycard__heading">{{i.0}}</h2>
+                        <h4 class="summarycard__source">{{i.2}}</h4>
+                        <h6 class="summarycard__source">{{i.1}}</h6>
+                        <div class="progressbar">
+                            <div class="progressbar__head">Progress-Bar</div>
+                            <div class="progressbar__main">
+                                <div class="progressbar__fill" fillVal={{i.4}}></div>
+                            </div>
+                            
+                        </div>
                         <div class="feature">
                             <ul class="feature__list feature__list--right">
                                 <li class="feature__item"><a target="_target" href="{{i.1}}" title="Read More" class="fa fa-newspaper-o"></i></a></li>
@@ -78,6 +85,20 @@
                     </div>
                 </div>
                 {% endfor %}
+                <script>
+                    var fill = document.getElementsByClassName("progressbar__fill");
+                    for(var i=0; i < fill.length; i++){
+                        if(fill[i].getAttribute("fillVal") < 2){
+                            fill[i].style.background = "red"
+                        }else if(fill[i].getAttribute("fillVal") < 3){
+                            fill[i].style.background = "blue"
+                        }else{
+                            fill[i].style.background = "green"
+                        }
+                        fill[i].style.width = String(100*fill[i].getAttribute("fillVal")/3) + "%"
+                        console.log(String(100*fill[i].getAttribute("fillVal")/3) + "%");
+                    }
+                </script>
             </div>
             
         </div>

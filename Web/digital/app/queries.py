@@ -45,6 +45,33 @@ def add_donors(id,rd,fswmch,desc,address,name,number):
     donor[id]=[rd,fswmch,cords,name,desc,number,address]
     db.child("donor").set(donor,user['idToken'])
 
+def add_issue(description,name,department,date_of_reporting):
+    refresh(user)
+    issues=db.child("issues").get(user["idToken"]).val()
+    id=len(issues)
+    progress="1"
+    print("----")
+    print([description,name,department,date_of_reporting,progress])
+    issues[id]=[description,name,department,date_of_reporting,progress]
+    db.child("issues").set(issues,user["idToken"])
+
+def get_issue():
+    refresh(user)
+    issues=db.child("issues").get(user["idToken"]).val()
+    results = []
+    for key in issues.keys():
+        results.append(issues[key])
+    return results
+
+def get_sos():
+    refresh(user)
+    sos=db.child("announce").get(user["idToken"]).val()
+    results = []
+    for key in sos.keys():
+        sos[key][1] = sos[key][1][:50]
+        results.append(sos[key])
+    return results
+
 def number_of_req(x):
     refresh(user)
     donor=db.child(x).get(user["idToken"]).val()
