@@ -5,10 +5,10 @@ import googlemaps,re
 from datetime import datetime
 
 
-YOUR_API_KEY = GCPapikey # Enter your API Key
+YOUR_API_KEY = "AIzaSyAwAdfRMQoKv8Tmc4iD2KsDCXQfWoxVJkk" # Enter your API Key
 
 google_places = GooglePlaces(YOUR_API_KEY)
-gmaps = googlemaps.Client(key=GCPapikey) # Enter your Key here.
+gmaps = googlemaps.Client(key=YOUR_API_KEY) # Enter your Key here.
 
 type_map = {
     "HOSPITAL":types.TYPE_HOSPITAL,
@@ -29,7 +29,7 @@ query_result = google_places.text_search(query="Restaurant in Dahisar",location=
 def process_detail(key):
     # AUTOCOMPLETE
     query_result = google_places.autocomplete(input=key,location="India",radius=200)
-    print(query_result)
+    
     if len(query_result.predictions):
         pred = query_result.predictions[0]
         addr = pred.description
@@ -45,10 +45,7 @@ def google_directions(ori, dest, mode):
     now = datetime.now()
     directions_result = None
     try: 
-        print(ori,dest,mode)
-        directions_result = gmaps.directions("Sydney Town Hall",
-                                     "Parramatta, NSW",
-                                     mode="driving", departure_time = now)
+        directions_result = gmaps.directions(ori,dest,mode=mode, departure_time = now)
     except:
         print("A network error occurred; please try again")
     
@@ -90,5 +87,5 @@ if __name__ == "__main__":
     # print(retreive_area(loc="Dahisar ,Mumbai",key="POLICE"))
     #print(google_directions('sec10 Airoli', 'Somaiya VidyaVihar', 'driving'))
     #print(google_directions)
-    #print(process_detail('KJSCE ,VidyaVihar'))
-    print(retreive_area('KJSCE ,VidyaVihar',"fire"))
+    print(process_detail('KJSCE ,VidyaVihar'))
+    #print(retreive_area('KJSCE ,VidyaVihar',"fire"))
