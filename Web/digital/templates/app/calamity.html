@@ -3,18 +3,18 @@
 {% block body_block %}
 <div class="pc-tab">
         <input id="tab1" type="radio" name="pct" />
-        <input id="tab2" type="radio" name="pct" />
-        <input id="tab3" type="radio" name="pct" checked/>
+        <input id="tab2" type="radio" name="pct" checked/>
+        <input id="tab3" type="radio" name="pct" />
         <nav>
             <ul>
                 <li class="tab1">
-                    <label for="tab1">High</label>
+                    <label for="tab1" style="display: none;">High</label>
                 </li>
                 <li class="tab2">
-                    <label for="tab2">Medium</label>
+                    <label for="tab2">Current</label>
                 </li>
                 <li class="tab3">
-                    <label for="tab3">Low</label>
+                    <label for="tab3">Contact</label>
                 </li>
             </ul>
         </nav>
@@ -23,10 +23,40 @@
                 High
             </div>
             <div class="tab2 tab">
-                Medium
+                <div class="cardcontainer">
+                    <div class="card">
+                        <div class="card__head">Fire at King's Circle</div>
+                        <div class="card__sub">Lat: 19.058 Long: 70.2598</div>
+                    </div>
+                    <div class="card">
+                        <div class="card__head">Flood at Koliwada</div>
+                        <div class="card__sub">Lat: 18.579 Long: 75.358</div>
+                    </div>
+                </div>
             </div>
             <div class="tab3 tab">
-                Low
+                <div class="cardcontainer">
+                    <div class="card">
+                        <div class="card__head">Police</div>
+                        <div class="card__sub">Conatact: 1234567890</div>
+                    </div>
+                    <div class="card">
+                        <div class="card__head">Fire</div>
+                        <div class="card__sub">Contact: 9874563210</div>
+                    </div>
+                    <div class="card">
+                        <div class="card__head">Ambulance</div>
+                        <div class="card__sub">Contact: 1234567890</div>
+                    </div>
+                    <div class="card">
+                        <div class="card__head">QRT</div>
+                        <div class="card__sub">Contact: 4567891233</div>
+                    </div>
+                    <div class="card">
+                        <div class="card__head">NRF</div>
+                        <div class="card__sub">Contact: 1237894560</div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

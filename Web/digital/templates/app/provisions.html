@@ -1,45 +1,95 @@
 {% extends 'app/base.html' %}
 
 {% block body_block %}
-
-
-<div class="result">
-    {% for i in src %}
-    <div class="resultcard">
-        <img class="resultcard__img" src="https://dummyimage.com/590x425/000/fff" alt="#">
-        <h2 class="resultcard__heading">{{i.2}}</h2>
-        <h4 class="resultcard__source">{{i.0}}</h4>
-    </div>
-    <div class="summarycard">
-        <div class="summarycard__left">
-            <img src="https://dummyimage.com/590x425/000/fff" alt="#">
-            <!--                 <div class="feature">
-                <ul class="feature__list">
-                    <li class="feature__item"><a href=""><i class="fa fa-thumbs-up"></i></a></li>
-                    <li class="feature__item"><a href=""><i class="fa fa-thumbs-down"></i></a></li>
-                </ul>
-            </div> -->
+<div class="pc-tab">
+    <input id="tab1" type="radio" name="pct" />
+    <input id="tab2" type="radio" name="pct" />
+    <input id="tab3" type="radio" name="pct" checked/>
+    <nav>
+        <ul>
+            <li class="tab1">
+                <label for="tab1" style="display: none;">High</label>
+            </li>
+            <li class="tab2">
+                <label for="tab2">Medium</label>
+            </li>
+            <li class="tab3">
+                <label for="tab3">Low</label>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <div class="tab1 tab">
+            High
         </div>
-        <div class="summarycard__right">
-            <div class="feature">
-                <ul class="feature__list feature__list--right">
-                    <li class="feature__item"><a href=""><i class="fa fa-bookmark-o bookmark"></i></a></li>
-                    <li class="feature__item"><a href=""><i class="fa fa-check-circle"></i></a></li>
-                </ul>
-            </div>
-            <h2 class="summarycard__heading">{{i.2}}</h2>
-            <p class="summarycard__summary">{{i.4}}</p>
-            <h4 class="summarycard__source">{{i.0}}</h4>
-            <div class="feature">
-                <ul class="feature__list feature__list--right">
-                    <li class="feature__item"><a target="_target" href="{{i.1}}" title="Read More" class="fa fa-newspaper-o"></i></a></li>
-                    <li class="feature__item"><a href="" title="Facebook Share"><i class="fa fa-facebook"></i></a></li>
-                    <li class="feature__item"><a href="" title="Twitter Share"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-            </div>
+        <div class="tab2 tab">
+            <form action="{% url 'app:issue' %}" method="post">
+                {% csrf_token %}
+                <div class="fildscontainer">
+                    <div class="filds">
+                        <input type="text" id="name" placeholder="Name" name="name">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="filds">
+                        <input type="text" id="description" placeholder="short description" name="descr">
+                        <label for="description">Description</label>
+                    </div>
+                    <div class="filds">
+                        <input type="text" id="address" placeholder="Address" name="addr">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="filds">
+                        <input type="text" id="phone" placeholder="Phone" name="phn">
+                        <label for="phone">Phone</label>
+                    </div>
+                </div>
+                <button type="submit" id="issueForm">Register</button>
+            </form>
         </div>
-    </div>
-    {% endfor %}
+        <div class="tab3 tab">
+            <div class="result">
+                {% for i in src %}
+                <div class="resultcard">
+                    <img class="resultcard__img" src="https://dummyimage.com/590x425/000/fff" alt="#">
+                    <h2 class="resultcard__heading">{{i.2}}</h2>
+                    <h4 class="resultcard__source">{{i.0}}</h4>
+                </div>
+                <div class="summarycard">
+                    <div class="summarycard__left">
+                        <img src="https://dummyimage.com/590x425/000/fff" alt="#">
+                    </div>
+                    <div class="summarycard__right">
+                        <div class="feature">
+                            <ul class="feature__list feature__list--right">
+                                <li class="feature__item"><a href=""><i class="fa fa-bookmark-o bookmark"></i></a></li>
+                                <li class="feature__item"><a href=""><i class="fa fa-check-circle"></i></a></li>
+                            </ul>
+                        </div>
+                        <h2 class="summarycard__heading">{{i.2}}</h2>
+                        <p class="summarycard__summary">{{i.4}}</p>
+                        <h4 class="summarycard__source">{{i.0}}</h4>
+                        <div class="feature">
+                            <ul class="feature__list feature__list--right">
+                                <li class="feature__item"><a target="_target" href="{{i.1}}" title="Read More" class="fa fa-newspaper-o"></i></a></li>
+                                <li class="feature__item"><a href="" title="Facebook Share"><i class="fa fa-facebook"></i></a></li>
+                                <li class="feature__item"><a href="" title="Twitter Share"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </section>
 </div>
-
 {% endblock %}
+
+<!-- 
+    
+-->
+
+<!-- 
+    
+    
+-->

@@ -23,7 +23,7 @@ def find_specific_donors(queue):
     for key in donors.keys():
         if int(donors[key][1],2) & queue:
             results.append(donors[key])
-    return 
+    return results
 
 
 def add_donors(id,rd,fswmch,name,descr,address,number):
@@ -34,9 +34,9 @@ def add_donors(id,rd,fswmch,name,descr,address,number):
     # donor[id]=[rd,fswmch,cords,name,descr,number,address]
     # db.child("donor").set(donor,user['idToken'])
 
-def number_of_req():
+def number_of_req(x):
     refresh(user)
-    donor=db.child("donor").get(user["idToken"]).val()
+    donor=db.child(x).get(user["idToken"]).val()
     return len(donor)
 
 
