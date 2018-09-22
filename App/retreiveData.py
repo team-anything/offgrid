@@ -46,6 +46,7 @@ def google_directions(ori, dest, mode):
     directions_result = None
     try: 
         print(ori,dest,mode)
+        print(now)
         directions_result = gmaps.directions("Sydney Town Hall",
                                      "Parramatta, NSW",
                                      mode="driving", departure_time = now)
@@ -88,7 +89,7 @@ def latlong(addr):
     
 if __name__ == "__main__":
     # print(retreive_area(loc="Dahisar ,Mumbai",key="POLICE"))
-    #print(google_directions('sec10 Airoli', 'Somaiya VidyaVihar', 'driving'))
+    print(google_directions('sec10 Airoli', 'Somaiya VidyaVihar', 'driving'))
     #print(google_directions)
     #print(process_detail('KJSCE ,VidyaVihar'))
     print(retreive_area('KJSCE ,VidyaVihar',"fire"))

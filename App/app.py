@@ -50,6 +50,7 @@ Addr [opt]
 @app.route('/',methods = ['POST', 'GET'])
 def user_query():
     if request.method == 'POST':
+        global counter
         data = request.get_data()
         result = data.decode("utf-8")
 
@@ -113,6 +114,13 @@ def user_query():
                 print("*"*80)
                 # query.sendSMS(number,data)
         elif response_type == 4:
+            response.append(sender)
+            
+            donor=db.child("donor").get(user['idToken']).val()
+            donor["x"+str(counter)]=response
+            db.child("donor").set(donor,user['idToken'])
+            
+            counter += 1
             data = retreive.retreive_area(response[1],response[0])
             number = data[1]
             if len(data) == 1:
@@ -129,7 +137,6 @@ def user_query():
                 # query.sendSMS(number,data)
         elif response_type == 5:
             response.insert(5,sender)
-            global counter
             message = "Your requirement has been registered! Thanks"
             donor=db.child("donor").get(user['idToken']).val()
             donor["x"+str(counter)]=response
