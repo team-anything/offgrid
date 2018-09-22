@@ -11,10 +11,10 @@ from .config import *
 
 # Create your views here.
 def index(request):
-    return render(request,'app/index.html')
+    return render(request,'app/map.html')
 
 def appindex(request):
-    return render(request,'app/appindex.html')
+    return render(request,'app/map.html')
 
 def map(request):
     # FSWMCH
