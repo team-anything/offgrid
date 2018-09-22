@@ -120,11 +120,7 @@
                         <li class="tg-list-item">
                             <input class="tgl tgl-ios" id="cbx3" type="checkbox" name="cbx3" />
                             <label class="tgl-btn" for="cbx3"></label>
-<<<<<<< HEAD
                             <div class="tgl-list-item-name"><i class="fa fa-black-tie"></i> Clothing</div>
-=======
-                            <div class="tgl-list-item-name"><i class="fa  fa-black-tie"></i> Clothing</div>
->>>>>>> 4b4ba882964f110627601b41589b9be9299dc63b
                         </li>
                     </ul>
                     <ul class="tg-list">
@@ -151,11 +147,10 @@
     </section>
 </div>
 <script>
-    var button = [] { %
-        for i in fin %
-    }
-    button.push('{{i}}') { % endfor %
-    }
+    var button = [] 
+    {% for i in fin %}
+        button.push('{{i}}') 
+    {% endfor %}
     console.log("TTTTTTTTTTTTT")
     console.log(button)
     for (var i = 0; i < 6; i++) {
