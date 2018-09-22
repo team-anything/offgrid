@@ -1,0 +1,19 @@
+.progressbar{
+    text-align: center;
+
+    &__head{
+        text-decoration: underline;
+    }
+
+    &__main{
+        margin: 10px;
+        width: 100%;
+        height: 20px;
+        border: 1px solid black;
+    }
+    &__fill{
+        width: 80%;
+        background: red;
+        height: 20px;
+    }
+}

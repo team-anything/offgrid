@@ -1,0 +1,91 @@
+.feature {
+
+    &__float {
+        background-color: var(--color-white);
+        font-size: 2.5rem;
+        width: 50px;
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        box-shadow: 0 0 3px 0 rgba(0,0,0,.5);
+        text-align: center;
+        border-radius: 100%;
+        transition: .3s all linear;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 1.5rem 0 rgba(0,0,0,0.3);
+
+            .feature__floatitem a {
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    &__floatitem{
+        cursor: pointer;
+        width: 50px;
+        text-align: center;
+        display: inline-block;
+        font-size: 2.5rem;
+        padding: 1rem;
+        border-radius: 5px;
+        a {
+            transform: .3s all linear;
+            color: var(--color-black);
+        }
+    }
+
+    padding: 1rem;
+    &__list {
+        list-style-type: none;
+        text-align: center;
+        &--right {
+            text-align: right;
+        }
+    }
+    &__item {
+        cursor: pointer;
+        width: 50px;
+        text-align: center;
+        // background-color: var(--color-primary);
+        display: inline-block;
+        font-size: 2.5rem;
+        padding: 1rem;
+        border: 1px solid var(--color-primary);
+        border-radius: 5px;
+        transition: .3s all linear;
+        margin: 1rem 0;
+        // box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+        a {
+            color: var(--color-black);
+            transform: .3s all linear;
+        }
+
+        &:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.2);
+            a {
+                color: var(--color-white);
+                .fa {
+                    color: var(--color-white);
+                }
+            }
+        }
+    }
+}
+.fa{
+    &-check-circle{
+        color: forestgreen;
+    }
+    &-bookmark{
+        color: orange;
+    }
+    &-facebook{
+        color: #3b5998;
+    }
+    &-twitter{
+        color: #00aced;
+    }
+}
