@@ -61,16 +61,14 @@ def need(request):
                 fin.append('0')
         print(fin)
         index = queries.number_of_req()
-        final = [index,0]
-        final.append("".join(fin))
-        final.append(request.POST.get("name"))
-        final.append(request.POST.get("descr"))
-        final.append(request.POST.get("addr"))
-        final.append(request.POST.get("phn"))
+        rd = 0
+        fswmch = "".join(fin)
+        desc = request.POST.get('descr')
+        address = request.POST.get('addr')
+        name = request.POST.get('name')
+        number = request.POST.get('phn')
         
-        queries.add_donors(final[0],0,final[1],final[2],final[3],final[4],final[5])
-        print(final)
-        # result = [1,2,3,4]
+        queries.add_donors(index,rd,fswmch,desc,address,name,number)
         return render(request,'app/map.html')
 
 # def adddonors(request):
