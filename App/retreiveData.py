@@ -29,7 +29,7 @@ query_result = google_places.text_search(query="Restaurant in Dahisar",location=
 def process_detail(key):
     # AUTOCOMPLETE
     query_result = google_places.autocomplete(input=key,location="India",radius=200)
-    print(query_result)
+    
     if len(query_result.predictions):
         pred = query_result.predictions[0]
         addr = pred.description
@@ -89,7 +89,7 @@ def latlong(addr):
     
 if __name__ == "__main__":
     # print(retreive_area(loc="Dahisar ,Mumbai",key="POLICE"))
-    print(google_directions('sec10 Airoli', 'Somaiya VidyaVihar', 'driving'))
+    #print(google_directions('sec10 Airoli', 'Somaiya VidyaVihar', 'driving'))
     #print(google_directions)
-    #print(process_detail('KJSCE ,VidyaVihar'))
-    print(retreive_area('KJSCE ,VidyaVihar',"fire"))
+    print(process_detail('KJSCE ,VidyaVihar'))
+    #print(retreive_area('KJSCE ,VidyaVihar',"fire"))

@@ -74,7 +74,7 @@ def user_query():
         response_type = None
 
         if query_dict[-1] == 0:
-            #query.sendSMS(number,query_dict[0])
+            #query.sendSMS(sender,query_dict[0])
             print("SENT :",query_dict[0])
             print("*"*80)
             response_type = 0 
@@ -85,13 +85,13 @@ def user_query():
         
         if response_type == 2:
             data = retreive.google_directions(response[0],response[1],response[2])
-            # query.sendSMS(number,data)
+            # query.sendSMS(sender,data)
             print("SENT :",data)
             print("*"*80)
 
         elif response_type == 3:
             data = retreive.process_detail(response[0])
-            # query.sendSMS(number,"ADDRESS: \n"+data)
+            # query.sendSMS(sender,"ADDRESS: \n"+data)
             print("SENT :",data)
             print("*"*80)
 
@@ -102,7 +102,7 @@ def user_query():
             # pin code conv .
             data = retreive.retreive_area(placename[str(pincode)],query_i)
             if len(data) == 1:
-                # query.sendSMS(number,data)
+                # query.sendSMS(sender,data)
                 print("SENT :",data)
                 print("*"*80)
             elif data != None:
@@ -112,19 +112,19 @@ def user_query():
                     data = data[0]+"\n"+data[2]
                 print("SENT :",data)
                 print("*"*80)
-                # query.sendSMS(number,data)
+                # query.sendSMS(sender,data)
         elif response_type == 4:
             response.append(sender)
             
-            donor=db.child("donor").get(user['idToken']).val()
+            donor=db.child("announce").get(user['idToken']).val()
             donor["x"+str(counter)]=response
-            db.child("donor").set(donor,user['idToken'])
+            db.child("announce").set(donor,user['idToken'])
             
             counter += 1
-            data = retreive.retreive_area(response[1],response[0])
-            number = data[1]
+            data = retreive.retreive_area(response[1],response[-2])
+            
             if len(data) == 1:
-                # query.sendSMS(number,data)
+                # query.sendSMS(sender,data)
                 print("SENT :",data)
                 print("*"*80)
             elif data != None:
@@ -134,16 +134,18 @@ def user_query():
                     data = data[0]+"\n"+data[2]
                 print("SENT :",data)
                 print("*"*80)
-                # query.sendSMS(number,data)
+                # query.sendSMS(sender,data)
         elif response_type == 5:
             response.insert(5,sender)
             message = "Your requirement has been registered! Thanks"
             donor=db.child("donor").get(user['idToken']).val()
+
+            print(response)
             donor["x"+str(counter)]=response
             db.child("donor").set(donor,user['idToken'])
             
             counter += 1
-            # query.sendSMS(number,message)
+            # query.sendSMS(sender,message)
             print("DONE!")
             
         print("Message Sent : app.py")

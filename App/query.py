@@ -53,16 +53,16 @@ def apiai_query(message):
         elif typ=="nearby":
             return [pin_code,department,typ,1]
         elif typ=="emergency":
+            message = message.split('\n')
             description = message[0]
             message = message[1:]
             message = ",".join(message)
+            print(message)
             actual_addr = retreive.process_detail(message)
-            lat_long = retreive.latlong(actual_addr)
+            print(actual_addr)
 
             return [description,actual_addr,department,4]
-            return [department,message,4]
         elif typ=="requirement":
-            # department = param["department1"] :  Single : ! LIST 
             x = ["0"]*6
             x[need_list.index(department)] = "1"
             x = "".join(x)
