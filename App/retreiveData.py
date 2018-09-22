@@ -45,11 +45,7 @@ def google_directions(ori, dest, mode):
     now = datetime.now()
     directions_result = None
     try: 
-        print(ori,dest,mode)
-        print(now)
-        directions_result = gmaps.directions("Sydney Town Hall",
-                                     "Parramatta, NSW",
-                                     mode="driving", departure_time = now)
+        directions_result = gmaps.directions(ori,dest,mode=mode, departure_time = now)
     except:
         print("A network error occurred; please try again")
     
