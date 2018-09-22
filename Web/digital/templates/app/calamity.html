@@ -1,56 +1,63 @@
 {% extends 'app/base.html' %}
 
 {% block body_block %}
-<div class="tab">
-    <input type="radio" id="tab1" name="tab" checked>
-    <input type="radio" id="tab2" name="tab">
-    <input type="radio" id="tab3" name="tab">
-    <div class="tab__nav">
-        <label for="tab1">High</label>
-        <label for="tab2">Medium</label>
-        <label for="tab3">Low</label>
+<div class="pc-tab">
+        <input id="tab1" type="radio" name="pct" />
+        <input id="tab2" type="radio" name="pct" checked/>
+        <input id="tab3" type="radio" name="pct" />
+        <nav>
+            <ul>
+                <li class="tab1">
+                    <label for="tab1" style="display: none;">High</label>
+                </li>
+                <li class="tab2">
+                    <label for="tab2">Current</label>
+                </li>
+                <li class="tab3">
+                    <label for="tab3">Contact</label>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <div class="tab1 tab">
+                High
+            </div>
+            <div class="tab2 tab">
+                <div class="cardcontainer">
+                    {% for x in list %}
+                    <div class="card">
+                        <div class="card__head">{{ x.0 }}</div><br>
+                        <div class="card__sub"> {{ x.2 }}</div><br>
+                        <div class="card__sub">{{ x.3 }}</div>
+                        <div class="card__sub">{{ x.1 }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="tab3 tab">
+                <div class="cardcontainer">
+                    <div class="card">
+                        <div class="card__head">Police</div>
+                        <div class="card__sub">Conatact: 1234567890</div>
+                    </div>
+                    <div class="card">
+                        <div class="card__head">Fire</div>
+                        <div class="card__sub">Contact: 9874563210</div>
+                    </div>
+                    <div class="card">
+                        <div class="card__head">Ambulance</div>
+                        <div class="card__sub">Contact: 1234567890</div>
+                    </div>
+                    <div class="card">
+                        <div class="card__head">QRT</div>
+                        <div class="card__sub">Contact: 4567891233</div>
+                    </div>
+                    <div class="card">
+                        <div class="card__head">NRF</div>
+                        <div class="card__sub">Contact: 1237894560</div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="tab__data1 tab__data">
-        <div class="card">
-            <div class="card__content">
-                <div class="card__content--head">Fire at building</div>
-                <div class="card__content--sub">0.5km</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__content">
-                <div class="card__content--head">Fire at building</div>
-                <div class="card__content--sub">0.5km</div>
-            </div>
-        </div>
-    </div>
-    <div class="tab__data2 tab__data">
-        <div class="card">
-            <div class="card__content">
-                <div class="card__content--head">Fire at building</div>
-                <div class="card__content--sub">0.5km</div>
-            </div>
-        </div>
-    </div>
-    <div class="tab__data3 tab__data">
-        <div class="card">
-            <div class="card__content">
-                <div class="card__content--head">Fire at building</div>
-                <div class="card__content--sub">0.5km</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__content">
-                <div class="card__content--head">Fire at building</div>
-                <div class="card__content--sub">0.5km</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card__content">
-                <div class="card__content--head">Fire at building</div>
-                <div class="card__content--sub">0.5km</div>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}
