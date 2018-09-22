@@ -124,7 +124,7 @@ def user_query():
             data = retreive.retreive_area(response[1],response[-2])
             
             if len(data) == 1:
-                # query.sendSMS(sender,data)
+                #query.sendSMS(sender,data)
                 print("SENT :",data)
                 print("*"*80)
             elif data != None:
@@ -134,7 +134,7 @@ def user_query():
                     data = data[0]+"\n"+data[2]
                 print("SENT :",data)
                 print("*"*80)
-                # query.sendSMS(sender,data)
+                #query.sendSMS(sender,data)
         elif response_type == 5:
             response.insert(5,sender)
             message = "Your requirement has been registered! Thanks"
@@ -145,7 +145,7 @@ def user_query():
             db.child("donor").set(donor,user['idToken'])
             
             counter += 1
-            # query.sendSMS(sender,message)
+            #query.sendSMS(sender,message)
             print("DONE!")
             
         print("Message Sent : app.py")

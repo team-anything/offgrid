@@ -33,7 +33,9 @@ def apiai_query(message):
     if "number" in param.keys():
         pin_code = param["number"]
     if "department" in param.keys():
-        department = param["department"][0]
+        department = param["department"]
+        if len(department)>0:
+            department = department[0]
     if "type" in param.keys():
         typ = param["type"][0]
         if typ == "route":

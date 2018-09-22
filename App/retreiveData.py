@@ -5,10 +5,10 @@ import googlemaps,re
 from datetime import datetime
 
 
-YOUR_API_KEY = GCPapikey # Enter your API Key
+YOUR_API_KEY = "AIzaSyAwAdfRMQoKv8Tmc4iD2KsDCXQfWoxVJkk" # Enter your API Key
 
 google_places = GooglePlaces(YOUR_API_KEY)
-gmaps = googlemaps.Client(key=GCPapikey) # Enter your Key here.
+gmaps = googlemaps.Client(key=YOUR_API_KEY) # Enter your Key here.
 
 type_map = {
     "HOSPITAL":types.TYPE_HOSPITAL,
