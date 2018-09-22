@@ -1,14 +1,23 @@
 import pyrebase
-from .config import config,email,password
+import googlemaps
+from .config import config,email,password,GCPapikey
 
 firebase = pyrebase.initialize_app(config)
 auth=firebase.auth()
 user=auth.sign_in_with_email_and_password(email,password)
 
+gmaps = googlemaps.Client(key=GCPapikey)
+
+
 def refresh(user):
     user=auth.refresh(user['refreshToken'])
 
 db=firebase.database()
+
+def latlong(addr):
+    geocode_result = gmaps.geocode(addr)
+    latlng=geocode_result[0]['geometry']['location']
+    return [latlng['lat'],latlng['lng']]
 
 def find_donors():
     refresh(user)
@@ -23,16 +32,18 @@ def find_specific_donors(queue):
     for key in donors.keys():
         if int(donors[key][1],2) & queue:
             results.append(donors[key])
-    return 
+    return results
 
 
-def add_donors(id,rd,fswmch,name,descr,address,number):
+def add_donors(id,rd,fswmch,desc,address,name,number):
     refresh(user)
     donor=db.child("donor").get(user['idToken']).val()
     id = str(id)
-    print([rd,fswmch,name,descr,number,address])
-    # donor[id]=[rd,fswmch,cords,name,descr,number,address]
-    # db.child("donor").set(donor,user['idToken'])
+    #print("******")
+    cords=latlong(address)
+    #print([rd,fswmch,cords,name,desc,number,address])
+    donor[id]=[rd,fswmch,cords,name,desc,number,address]
+    db.child("donor").set(donor,user['idToken'])
 
 def number_of_req():
     refresh(user)

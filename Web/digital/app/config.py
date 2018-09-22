@@ -10,5 +10,7 @@ config={
         "storageBucket": "digizen-8527d.appspot.com"
 }
 
+APIAIKey = "5f4a090f8f6047afb3d070582b8e60aa"
+
 email="teamanything98@gmail.com"
 password="testing1234"
