@@ -1,16 +1,16 @@
 
-TLapikey = "ygNzUrMWpEo-4ApNKdUBH104uM4tT5BzbkrLvImsjW"
-GLapikey = "5193fd5d6be7dec3bc6562373b65b84ca193b8434513443668164619"
-GCPapikey = "AIzaSyAwAdfRMQoKv8Tmc4iD2KsDCXQfWoxVJkk" 
+TLapikey = "ADD TEXT LOCAL TOKEN"
+GLapikey = "ADD Google Location TOKEN"
+GCPapikey = "ADD Google Places TOKEN"
 
 config={
-        "apiKey": "AIzaSyAbR4GEnADyWeqqIr9BHQ6NbgWoGQ2U8lA",
-        "authDomain": "digizen-8527d.firebaseapp.com",
-        "databaseURL": "https://digizen-8527d.firebaseio.com",
-        "storageBucket": "digizen-8527d.appspot.com"
+        "apiKey": "KEY",
+        "authDomain": "ID.firebaseapp.com",
+        "databaseURL": "https://ID.firebaseio.com",
+        "storageBucket": "ID.appspot.com"
 }
 
-APIAIKey = "5f4a090f8f6047afb3d070582b8e60aa"
+APIAIKey = "ADD Dialog Flow TOKEN"
 
-email="teamanything98@gmail.com"
-password="testing1234"
+email="Email@gmail.com"
+password="Pass"
