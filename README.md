@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=300px src="evacuated.jpg"></a>
+ <img width=300px src="UI/evacuated.jpg"></a>
 </p>
 
 <h3 align="center">Digital Citizen Guidance</h3>
@@ -33,13 +33,13 @@
 <h3 > Web-App  </h3>
 <br>
 <p align="center">
-<img src ="maps-simulate.gif" width = 500px>
+<img src ="UI/maps-simulate.gif" width = 500px>
 </p>
 
 <h3> On SMS App  </h3>
 <br>
-<img src="./assets/sync-sub.gif" width=245px>
-<img src="./assets/show-news.gif" width=245px>
+<img src="UI/sms-simulate1.gif" width=255px height=450px>
+<img src="UI/sms-simulate2.gif" width=255px height=450px>
 
 </div>
 
