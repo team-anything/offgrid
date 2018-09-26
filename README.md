@@ -29,6 +29,7 @@ Calamity is something that can occur at anytime, anywhere. Its quit possible you
 - In case of long term calamities we provide a platform for people in need to post their requirements either by SMS or Web Portal.
 - Location based web interface where people with resources can find the needy and then get in touch with them directly 
 - SMS based offline gateway to find daily life utilities like address, nearest railway station etc
+- No installation, no need of internet,no need of smartphone, even people with feature phones can make use of it.
 
 <div align="center">
 
