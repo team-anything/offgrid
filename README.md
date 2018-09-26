@@ -3,7 +3,7 @@
  <img width=300px src="UI/evacuated.jpg"></a>
 </p>
 
-<h3 align="center">Digital Citizen Guidance</h3>
+<h3 align="center">OffGrid</h3>
 
 <div align="center">
 
@@ -15,18 +15,20 @@
 
 ---
 
-> `Add Description Here`
+Calamity is something that can occur at anytime, anywhere. Its quit possible you find yourself stranded in the middle of nowhere. In such a time downloading an app or finding internet can be close to impossible and hence Off(line)Grid present an SMS based platform to help you out.
 
 <div align="center">
-&#10077; Humko Bachai Lo Babua &#10078;  -  <a href ="https://github.com/shivam1708"> cheetAh </a>
+&#10077; Prepare for the worst, hope for the best &#10078;  -  <a href ="https://github.com/shivam1708"> cheetAh </a>
 </div>
 
 ---
 
 ### Features
 
-- F1
-- F2
+- SMS triggered SOS signal reported directly to nearest police station,fire station, disaster management team as applicable.
+- In case of long term calamities we provide a platform for people in need to post their requirements either by SMS or Web Portal.
+- Location based web interface where people with resources can find the needy and then get in touch with them directly 
+- SMS based offline gateway to find daily life utilities like address, nearest railway station etc
 
 <div align="center">
 
