@@ -68,7 +68,7 @@ Calamity is something that can occur at anytime, anywhere. Its quit possible you
 
 ### Contributors
 
-- [@shivam1708](https://github.com/nurdtechie98)
-- [@nurdtechie98](https://github.com/shivam1708)
+- [@shivam1708](https://github.com/shivam1708)
+- [@nurdtechie98](https://github.com/nurdtechie98)
 - [@freelancer-98](https://github.com/Freelancer-98)
 - [@inishchith](https://github.com/inishchith)
